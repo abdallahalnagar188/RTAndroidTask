@@ -1,4 +1,4 @@
-package com.example.rtandroidtask.presentation.navigation
+package com.example.rtandroidtask.presentation.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

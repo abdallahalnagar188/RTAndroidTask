@@ -1,4 +1,4 @@
-package com.example.rtandroidtask.presentation.navigation
+package com.example.rtandroidtask.presentation.ui.navigation
 
 import com.example.rtandroidtask.R
 
