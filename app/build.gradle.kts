@@ -75,7 +75,11 @@ dependencies {
     implementation(libs.ytooltip)
     //implementation(libs.sdpCompose)
 
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("androidx.datastore:datastore:1.0.0")
 
+    implementation ("co.yml:ytooltip:1.0.0")
+    //implementation( "com.github.yourpackage.ytooltip:ytip:1.0.1")
 
     //implementation ("com.github.yogacp:yt-tooltip:1.0.0")
     implementation("com.github.skgmn:composetooltip:0.2.0")

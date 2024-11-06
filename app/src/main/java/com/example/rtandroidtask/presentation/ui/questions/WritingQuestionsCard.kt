@@ -30,7 +30,7 @@ internal fun WritingQuestionsCard(
     ElevatedCard(
         colors = CardDefaults.cardColors(containerColor = ExamateTheme.color.white),
         shape = ExamateTheme.shapes.large,
-        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 1.dp),
+        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp),
     ) {
         Column(
             modifier = Modifier
@@ -59,15 +59,15 @@ internal fun WritingQuestionsCard(
                 Icon(
                     painter = painterResource(questionItem.icon),
                     contentDescription = "Home",
-                    tint = ExamateTheme.color.black,
+                    tint = ExamateTheme.color.secondary600,
                     modifier = Modifier
-                        .size(18.dp)
+                        .size(22.dp)
                 )
                 Text(
                     text = questionItem.type,
                     style = ExamateTheme.typography.bold16,
                     textAlign = TextAlign.Start,
-                    color = ExamateTheme.color.primary200,
+                    color = ExamateTheme.color.contentSecondary,
                 )
             }
             Text(

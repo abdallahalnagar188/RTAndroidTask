@@ -31,7 +31,7 @@ internal fun OralQuestionsCard(
     ElevatedCard(
         colors = CardDefaults.cardColors(containerColor = ExamateTheme.color.white),
         shape = ExamateTheme.shapes.large,
-        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 1.dp),
+        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp),
     ) {
         Column(
             modifier = Modifier

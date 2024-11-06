@@ -37,7 +37,7 @@ fun MyAppBar(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
 
-        // Title Text
+
         Text(
             text = title,
             fontSize = 30.sp,
@@ -47,10 +47,9 @@ fun MyAppBar(
             fontFamily = fontBold
         )
 
-        // Conditionally show the IconButton based on the 'visible' parameter
         if (visible) {
             IconButton(
-                onClick = { /* Handle click event */ },
+                onClick = {  },
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
                     .size(45.dp)

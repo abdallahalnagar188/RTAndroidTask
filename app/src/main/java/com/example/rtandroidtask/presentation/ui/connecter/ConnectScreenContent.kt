@@ -1,5 +1,6 @@
 package com.example.rtandroidtask.presentation.ui.connecter
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -53,7 +54,7 @@ fun ConnectScreenContent() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             MyAppBar(title = "Connect", visible = false)
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Tabs()
         }
     }
@@ -84,9 +85,16 @@ fun Tabs() {
             }
         ) {
             tabs.forEachIndexed { index, title ->
-                Tab(text = { Text(title) },
+                Tab(text = {
+                    Text(
+                        title,
+                        style = ExamateTheme.typography.medium14,
+                        color = if (tabIndex == index) ExamateTheme.color.primary400 else ExamateTheme.color.contentSecondary
+                    )
+                },
                     selected = tabIndex == index,
-                    onClick = { tabIndex = index }
+                    onClick = { tabIndex = index },
+                    modifier = Modifier.height(40.dp)
                 )
             }
         }
@@ -102,7 +110,7 @@ fun Tabs() {
 fun Suggestions() {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         contentPadding = PaddingValues(10.dp)
     ) {
         item {
@@ -137,7 +145,7 @@ fun Suggestions() {
 fun Chat() {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         contentPadding = PaddingValues(10.dp)
     ) {
         items(connectionsList) {
