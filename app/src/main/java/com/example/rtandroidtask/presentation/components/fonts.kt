@@ -1,4 +1,4 @@
-package com.example.rtandroidtask.presentation.ui.common
+package com.example.rtandroidtask.presentation.components
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily

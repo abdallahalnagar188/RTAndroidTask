@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
@@ -21,7 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.rtandroidtask.data.models.WritingQuestionsModel
 import com.example.rtandroidtask.presentation.theme.ExamateTheme
-import com.example.rtandroidtask.presentation.ui.common.CustomLinearIndicator
+import com.example.rtandroidtask.presentation.components.CustomLinearIndicator
 
 @Composable
 internal fun WritingQuestionsCard(
@@ -29,13 +30,15 @@ internal fun WritingQuestionsCard(
 ) {
     ElevatedCard(
         colors = CardDefaults.cardColors(containerColor = ExamateTheme.color.white),
-        shape = ExamateTheme.shapes.large,
+        //shape = ExamateTheme.shapes.large,
+        shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp),
+        modifier = Modifier.padding(horizontal = 4.dp, vertical = 4.dp)
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 7.dp, top = 7.dp, bottom = 7.dp, end = 25.dp),
+                .padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             Surface(

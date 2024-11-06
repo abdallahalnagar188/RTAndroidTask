@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import com.example.rtandroidtask.R
-import com.example.rtandroidtask.presentation.ui.common.CustomCircularProgressIndicator
+import com.example.rtandroidtask.presentation.components.CustomCircularProgressIndicator
 
 @Composable
 fun HomeProgressItem(

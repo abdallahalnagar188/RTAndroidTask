@@ -1,4 +1,4 @@
-package com.example.rtandroidtask.presentation.ui.connecter
+package com.example.rtandroidtask.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,36 +24,33 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
-import com.example.rtandroidtask.R
 import com.example.rtandroidtask.data.models.ConnectItemModel
 import com.example.rtandroidtask.presentation.theme.ExamateTheme
-import com.example.rtandroidtask.presentation.components.fontBold
 
 @Composable
 internal fun ConnectCardItem(
     itemModel: ConnectItemModel
 ) {
     ElevatedCard(
-        colors = CardDefaults.cardColors(containerColor = colorResource(R.color.white)),
+        colors = CardDefaults.cardColors(containerColor = ExamateTheme.color.white),
         shape = ExamateTheme.shapes.large,
-        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp),
+        elevation = CardDefaults.elevatedCardElevation(defaultElevation = 2.dp),
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 10.dp), // Changed here
-            verticalArrangement = Arrangement.spacedBy(10.dp) // Changed here
+                .padding(vertical = 10.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Row(
-                modifier = Modifier.padding(horizontal = 7.dp), // Changed here
+                modifier = Modifier.padding(horizontal = 7.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp) // Changed here
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 ProfilePicture(
                     image = itemModel.image,
@@ -66,9 +63,9 @@ internal fun ConnectCardItem(
                 )
             }
             Row(
-                modifier = Modifier.padding(horizontal = 7.dp), // Changed here
+                modifier = Modifier.padding(horizontal = 7.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp) // Changed here
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 itemModel.userInfo.forEach {
                     ConnectTextItem(icon = it.icon!!, title = it.title)
@@ -76,73 +73,9 @@ internal fun ConnectCardItem(
             }
         }
     }
+
 }
 
-@Composable
-private fun BodyTitleItem(
-    name: String,
-    target: String,
-    items: List<String>,
-) {
-    Column(
-        verticalArrangement = Arrangement.spacedBy(3.dp) // Changed here
-    ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(6.dp) // Changed here
-        ) {
-            Text(
-                text = name,
-                textAlign = TextAlign.Start,
-                fontFamily = fontBold,
-                color = ExamateTheme.color.primary600,
-                fontSize = 15.sp
-            )
-            Box(
-                modifier = Modifier
-                    .clip(ExamateTheme.shapes.medium)
-                    .width(110.dp) // Changed here
-                    .height(35.dp) // Changed here
-                    .padding(4.dp) // Changed here
-                    .background(ExamateTheme.color.primary600),
-                contentAlignment = Center
-            ) {
-                Text(
-                    text = "Targeting: $target",
-                    style = ExamateTheme.typography.medium14,
-                    color = ExamateTheme.color.white,
-                )
-            }
-        }
-        Text(
-            text = "Last seen online: Yesterday",
-            textAlign = TextAlign.Start,
-            style = ExamateTheme.typography.medium14,
-            color = ExamateTheme.color.gray,
-        )
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(4.dp), // Changed here
-        ) {
-            items.forEach {
-                Box(
-                    modifier = Modifier
-                        .clip(ExamateTheme.shapes.medium)
-                        .width(55.dp) // Changed here
-                        .height(20.dp) // Changed here
-                        .padding(2.dp) // Changed here
-                        .background(ExamateTheme.color.secondary400),
-                    contentAlignment = Center
-                ) {
-                    Text(
-                        text = it,
-                        style = ExamateTheme.typography.medium10,
-                        color = ExamateTheme.color.primary600,
-                    )
-                }
-            }
-        }
-    }
-}
 
 @Composable
 private fun ProfilePicture(
@@ -170,24 +103,93 @@ private fun ProfilePicture(
 }
 
 @Composable
-private fun ConnectTextItem(icon: ImageVector, title: String) {
-    Row(
-        modifier = Modifier
-            .padding(3.dp) // Changed here
-            .height(30.dp), // Changed here
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(2.dp) // Changed here
+private fun BodyTitleItem(
+    name: String,
+    target: String,
+    items: List<String>,
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(3.dp)
     ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = title,
-            modifier = Modifier.size(16.dp)
-        ) // Changed here
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            Text(
+                text = name,
+                textAlign = TextAlign.Start,
+                style = ExamateTheme.typography.bold18,
+                color = ExamateTheme.color.primary600
+            )
+            Box(
+                modifier = Modifier
+                    .clip(ExamateTheme.shapes.medium)
+                    .width(100.dp)
+                    .height(30.dp)
+                    .padding(2.dp)
+                    .background(ExamateTheme.color.primary600),
+                contentAlignment = Center
+            ) {
+                Text(
+                    text = "Targeting: $target",
+                    style = ExamateTheme.typography.medium14,
+                    color = ExamateTheme.color.white,
+                )
+            }
+        }
         Text(
-            text = title,
-            style = ExamateTheme.typography.medium12,
-            color = ExamateTheme.color.primary200
+            text = "Last seen online: Yesterday",
+            textAlign = TextAlign.Start,
+            style = ExamateTheme.typography.medium14,
+            color = ExamateTheme.color.primary200,
         )
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            items.forEach {
+                Box(
+                    modifier = Modifier
+                        .clip(ExamateTheme.shapes.medium)
+                        .width(55.dp)
+                        .height(20.dp)
+                        .padding(2.dp)
+                        .background(ExamateTheme.color.secondary400),
+                    contentAlignment = Center
+                ) {
+                    Text(
+                        text = it,
+                        style = ExamateTheme.typography.medium10,
+                        color = ExamateTheme.color.primary600,
+                    )
+                }
+            }
+        }
     }
 }
 
+@Composable
+private fun ConnectTextItem(icon: ImageVector, title: String) {
+    Row(
+        modifier = Modifier
+            .padding(3.dp)
+            .height(30.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(2.dp)
+    ) {
+        Icon(imageVector = icon, contentDescription = title, modifier = Modifier.size(16.dp))
+        Text(text = title, style = ExamateTheme.typography.medium12, color = ExamateTheme.color.primary200)
+    }
+}
+
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun PreivewItem() {
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        BodyTitleItem(
+            name = "Omar",
+            target = "B2",
+            items = listOf("English", "Arabic", "French")
+        )
+    }
+}

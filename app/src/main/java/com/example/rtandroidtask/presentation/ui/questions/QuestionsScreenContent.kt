@@ -18,11 +18,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.materialIcon
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
@@ -37,16 +35,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.rtandroidtask.R
 import com.example.rtandroidtask.data.models.questionsList
 import com.example.rtandroidtask.data.models.writingsList
 import com.example.rtandroidtask.presentation.theme.ExamateTheme
-import com.example.rtandroidtask.presentation.ui.common.MyAppBar
-import com.example.rtandroidtask.presentation.ui.common.ScreenContainer
-import com.example.rtandroidtask.presentation.ui.connecter.ConnectCardItem
-import com.example.rtandroidtask.presentation.ui.connecter.connectionsList
+import com.example.rtandroidtask.presentation.components.MyAppBar
+import com.example.rtandroidtask.presentation.components.ScreenContainer
 
 @Composable
 fun QuestionsScreenContent() {
@@ -154,7 +149,7 @@ fun Writing() {
         LazyVerticalGrid(
             modifier = Modifier,
             columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
             contentPadding = PaddingValues(10.dp)
         ) {
             items(writingsList.size) { index ->

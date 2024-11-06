@@ -9,4 +9,17 @@
     <string name="hint">Cliquez ici pour voir par catégories avec progression</string>
     <string name="splash_welcome">welcome to:  how to use and enjoy Examate</string>
     <string name="splash_onboarding">"Tap anywhere on the screen to continue "</string>
+    <string name="tooltip_hint_text">the first tooltip hint</string>
+    <string name="hint_home">This is the home screen</string>
+    <string name="hint_connect">Go to the connect section</string>
+    <string name="hint_questions">View frequently asked questions</string>
+    <string name="hint_tools">Explore useful tools</string>
+    <string name="hint_profile">Manage your profile</string>
+    <string name="home">Home</string>
+    <string name="tools">Tools</string>
+    <string name="connect">Connect</string>
+    <string name="profile">Profile</string>
+    <string name="questions">Questions</string>
+    <string name="empty">Empty</string>
+    <string name="close">Close</string>
 </resources>

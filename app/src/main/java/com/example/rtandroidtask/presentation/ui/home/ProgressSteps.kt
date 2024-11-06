@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
@@ -17,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rtandroidtask.R
 import com.example.rtandroidtask.data.models.ProgressStepItemData
+import com.example.rtandroidtask.presentation.components.fontBold
 
 @Composable
 internal fun ProgressSteps() {
@@ -33,15 +33,14 @@ internal fun ProgressSteps() {
         text = "Study Plan",
         color = colorResource(id = R.color.primary_800),
         modifier = Modifier
-            .padding(start = 12.dp,bottom = 10.dp).fillMaxWidth()
+            .padding(start = 12.dp).fillMaxWidth()
             .displayCutoutPadding(),
-        fontFamily = com.example.rtandroidtask.presentation.ui.common.fontBold,
+        fontFamily = fontBold,
         fontSize = 24.sp,
         textAlign = TextAlign.Start,
     )
     LazyColumn(
         modifier = Modifier
-            .systemBarsPadding()
             .fillMaxWidth()
             .background(color = androidx.compose.ui.graphics.Color.White)
             .padding(10.dp),

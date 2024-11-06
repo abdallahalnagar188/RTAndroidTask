@@ -14,8 +14,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rtandroidtask.R
-import com.example.rtandroidtask.presentation.ui.common.fontBold
-import com.example.rtandroidtask.presentation.ui.common.fontMedium
+import com.example.rtandroidtask.presentation.components.fontBold
+import com.example.rtandroidtask.presentation.components.fontMedium
 
 @Composable
 fun HelloTextTile(

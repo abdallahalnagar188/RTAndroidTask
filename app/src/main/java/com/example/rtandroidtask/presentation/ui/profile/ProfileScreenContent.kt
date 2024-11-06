@@ -7,8 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.rtandroidtask.R
-import com.example.rtandroidtask.presentation.ui.common.MyAppBar
+import com.example.rtandroidtask.presentation.components.MyAppBar
 
 @Composable
 fun ProfileScreenContent(

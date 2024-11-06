@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 
 @Composable
-fun ConnectScreen(navController: NavHostController) {
+fun ConnectScreen() {
     ConnectScreenContent()
 }
 

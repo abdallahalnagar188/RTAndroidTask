@@ -4,14 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -40,21 +37,17 @@ import com.example.rtandroidtask.R
 import com.example.rtandroidtask.data.models.ConnectItemModel
 import com.example.rtandroidtask.data.models.UserModel
 import com.example.rtandroidtask.presentation.theme.ExamateTheme
-import com.example.rtandroidtask.presentation.ui.common.MyAppBar
-import com.example.rtandroidtask.presentation.ui.common.ScreenContainer
+import com.example.rtandroidtask.presentation.components.ScreenContainer
 
 @Composable
 fun ConnectScreenContent() {
     ScreenContainer {
         Column(
             modifier = Modifier
-                .systemBarsPadding()
                 .fillMaxSize()
-                .padding(start = 10.dp, bottom = 55.dp, end = 10.dp),
+                .padding(start = 10.dp, end = 10.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            MyAppBar(title = "Connect", visible = false)
-            Spacer(modifier = Modifier.height(16.dp))
             Tabs()
         }
     }
@@ -70,8 +63,6 @@ fun Tabs() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .systemBarsPadding()
-            .displayCutoutPadding()
     ) {
         TabRow(
             selectedTabIndex = tabIndex,

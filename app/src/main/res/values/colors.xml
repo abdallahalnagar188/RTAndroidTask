@@ -26,6 +26,7 @@
     <color name="content_primary">#FF000000</color>
     <color name="content_secondary">#FF4B5563</color>
     <color name="accent">#FFF9FAFB</color>
+    <color name="bg_hint">#1F2937</color>
 
     <!-- Additional Colors -->
     <color name="gray">#FF808080</color> <!-- Color.Gray equivalent -->
